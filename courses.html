@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golf Courses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    body {
+      font-family: 'Mountains of Christmas', cursive;
+      background-color: #fff;
+      color: green;
+    }
+  
+    .header {
+      background-color: #6b9b6b;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  
+    .logo {
+      height: 50px;
+    }
+  
+    nav.nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 15px;
+      padding: 10px;
+      
+    }
+  
+    .nav a, .dropbtn {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      font-size: 1rem;
+      position: relative;
+    }
+  
+    .nav a:hover {
+      color: #d3ffd3;
+    }
+  
+    .dropdown {
+      position: relative;
+    }
+  
+   .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  background-color: #444;
+  border: 1px solid #ccc;
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  padding: 10px 14px;
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #666;
+  transition: 0.3s;
+}
+
+  
+    .main-section {
+      position: relative;
+      text-align: left;
+      color: white;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+  
+    .background-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.6);
+      z-index: 0;
+    }
+  
+    .text-overlay {
+      position: relative;
+      z-index: 1;
+      padding: 60px 10% 20px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+  
+    .text-overlay h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+  
+    .text-overlay p {
+      margin-bottom: 1.5rem;
+    }
+  
+    .footer {
+      background-color: #6b9b6b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      flex-wrap: wrap;
+      text-align: center;
+      font-size: 0.9em;
+    }
+  
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+  
+    .footer-logo {
+      height: 40px;
+    }
+    .footer p {
+      margin: 5px 0;
+      text-align: center;
+      flex: 1;
+    }
+  
+    .contact-info {
+      text-align: center;
+      flex: 1;
+    }
+  
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+  
+    .social-icons a {
+      background-color: white;
+      color: #107c10;
+      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
+  
+    .social-icons a:hover {
+      background-color: #f0e68c;
+      transform: scale(1.1);
+      color: #333;
+    }
+  
+   /* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .nav a,
+  .nav .dropdown {
+    display: inline-block;
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+
+  .dropdown-content {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    background-color: #444;
+    border: 1px solid #ccc;
+    top: 100%;
+    left: 0;
+    width: max-content;
+    z-index: 1000;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: flex;
+  }
+
+  .package {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .package img {
+    margin-bottom: 10px;
+  }
+
+  .package-content {
+    font-size: 1rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+  </style>
+  
+  
+</head>
+<body>
+  <div class="header">
+    <img src="logo.png" alt="Hole In One Logo" class="logo">
+    <nav class="nav">
+      <a href="#" id="homeLink">Home</a>
+<script>
+  document.getElementById("homeLink").addEventListener("click", function (e) {
+    e.preventDefault();
+    window.location.href = "prset.html";
+  });
+</script>
+      <a href="#" id="golfLink">Golf Courses</a>
+      <script>
+        document.getElementById("golfLink").addEventListener("click", function (e) {
+          e.preventDefault();
+          window.location.href = "courses.html";
+        });
+      </script>
+      <a href="#" id="packagesLink">Packages</a>
+      <script>
+        
+        document.getElementById("packagesLink").addEventListener("click", function (e) {
+          e.preventDefault();
+          window.location.href = "packages.html";
+        });
+      </script>
+      <a href="#" id="aboutLink">About</a>
+      <script>
+        
+document.getElementById("aboutLink").addEventListener("click", function (e) {
+  e.preventDefault();
+  window.location.href = "about.html";
+});
+      </script>
+
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Club Houses</a>
+        <div class="dropdown-content">
+          <a href="proshop.html">Proshop</a>
+          <a href="restaurant.html">Restaurant</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="main-section">
+    <img src="golfview.png" alt="Golf Course" class="background-img">
+    <div class="text-overlay">
+      <h2>GOLF COURSES</h2>
+      <p><strong>SEA VIEW</strong><br>Known for its breathtaking ocean vistas, this course provides a scenic and exhilarating round of golf.</p>
+      <p><strong>PINE HILLS</strong><br>A beautifully tree-lined course that offers a tranquil and rewarding challenge.</p>
+      <p><strong>LAKESIDE</strong><br>Featuring water hazards and lush fairways, this course tests both accuracy and skill.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      
+      <img src="logo.png" alt="Hole In One Logo" class="footer-logo">
+    </div>
+    <div class="contact-info">
+      <strong>HOLE IN ONE</strong><br>
+      R. do Árco, 80-2 Esq<br>
+      Email: Contact@holeinonegolf.pt
+    </div>
+   <div class="social-icons">
+  <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+  <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const dropdownBtn = document.querySelector('.dropbtn');
+    const dropdownContent = document.querySelector('.dropdown-content');
+
+    dropdownBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      dropdownContent.style.display = dropdownContent.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Optional: Hide dropdown when clicking outside
+    document.addEventListener('click', function (e) {
+      if (!dropdownBtn.contains(e.target) && !dropdownContent.contains(e.target)) {
+        dropdownContent.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pro Shop | Sportswear & Accessories</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #222;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+      text-align: center;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-card h3 {
+      margin: 15px 0 5px;
+      color: #333;
+    }
+
+    .product-card p {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .product-card .price {
+      font-weight: bold;
+      color: #007b5e;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .product-card button {
+      background-color: #007b5e;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .product-card button:hover {
+      background-color: #005f48;
+    }
+    
+  a {
+    text-decoration: none; 
+  }
+
+  a div {
+    display: inline-block; 
+    padding: 8px 15px;
+    color: white;
+    background-color: lightgreen; 
+    border: 1px solid lightgreen; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  a div:hover {
+    background-color: #6b9b; 
+    border-color: #6b9b;
+  }
+
+  
+  a div span,
+  a div b {
+    color: inherit; 
+  }
+
+    .btn-back {
+  display: inline-block;
+  background-color: #6b9b;
+  color: #333;
+  padding: 10px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-back:hover {
+  background-color: #ccc;
+}
+
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Pro Shop</h1>
+    <p>Browse our premium sportswear and accessories</p>
+  </header>
+
+  <section class="product-grid">
+  
+    <div class="product-card">
+      <img src="pst.png" alt="Sports Shirt" />
+      <h3>Performance Shirt</h3>
+      <p>Lightweight, breathable fabric for ultimate comfort.</p>
+      <div class="price">$29.99</div>
+     <a href="cvc.html">
+      <div class="l-109 s-13" style="top: 400px; left: 150px;">Add to cart</div>
+    </a>
+    </div>
+
+   
+    <div class="product-card">
+      <img src="cask.png" alt="Tennis Cap" />
+      <h3>Sport Cap</h3>
+      <p>UV-protective and moisture-wicking.</p>
+      <div class="price">$14.99</div>
+     <a href="cvc.html">
+      <div class="l-109 s-13" style="top: 400px; left: 150px;">Add to cart</div>
+    </a>
+    </div>
+
+ 
+    <div class="product-card">
+      <img src="shoes.png" alt="Sports Shoes" />
+      <h3>Running Shoes</h3>
+      <p>High-grip soles and breathable mesh design.</p>
+      <div class="price">$79.99</div>
+   <a href="cvc.html">
+      <div class="l-109 s-13" style="top: 400px; left: 150px;">Add to cart</div>
+    </a>
+    </div>
+
+  
+    <div class="product-card">
+      <img src="bottle.png" alt="Water Bottle" />
+      <h3>Hydration Bottle</h3>
+      <p>Stainless steel, keeps drinks cold for 24 hours.</p>
+      <div class="price">$19.99</div>
+     <a href="cvc.html">
+      <div class="l-109 s-13" style="top: 400px; left: 150px;">Add to cart</div>
+    </a>
+    </div>
+  </section>
+  <div style="text-align: center; margin-bottom: 20px;">
+  <a href="proshop.html" class="btn-back">← Go Back</a>
+</div>
+
+
+  <footer>
+    &copy; 2025 Your Pro Shop. All rights reserved.
+  </footer>
+  
+
+</body>
+</html>

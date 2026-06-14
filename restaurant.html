@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Restaurant Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Mountains of Christmas', cursive;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .header {
+      background-color: #8AC190;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .header img {
+      height: 40px;
+    }
+    .nav {
+  display: flex;
+  gap: 18px;
+}
+
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  font-family: 'Mountains of Christmas';
+  border: #6EB075;
+}
+
+.nav a:hover {
+  color: #d3ffd3;
+}
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  font-family: 'Mountains of Christmas', cursive;
+}
+
+.nav a, .dropbtn {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  font-size: 1.1em;
+  position: relative;
+}
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+  min-width: 150px;
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #666;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+    .hero {
+      width: 100%;
+      height: 300px;
+      background-image: url('resto.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero h1, .hero p {
+      color: white;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 5px 15px;
+      border-radius: 10px;
+      margin: 5px 0;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+    }
+
+    .hero p {
+      font-size: 18px;
+    }
+
+    .section {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: #6EB075;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      color: #6EB075;
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .dining-options {
+      margin-top: 40px;
+    }
+
+    .dining-options h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #6EB075;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      width: 160px;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-decoration: none;
+    }
+
+    .card img {
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+    }
+
+    .card-button {
+      background-color: #8AC190;
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 10px 0;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+
+
+    .contact {
+      margin: 50px 0 20px;
+    }
+
+    .contact p {
+      color: #6EB075;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .contact button {
+      background-color: #8AC190;
+      color: white;
+      border: none;
+      padding: 10px 30px;
+      font-size: 18px;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+    .contact button:hover {
+      background-color: #6EB075;
+      transform: translateY(-2px);
+      transition: 0.3s;
+    }
+
+
+    .footer {
+      background-color: #c3e6cb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      color: white;
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+
+    .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-icons a {
+  background-color: white;
+  color: #107c10;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.social-icons a:hover {
+  background-color: #f0e68c;
+  transform: scale(1.1);
+  color: #333;
+}
+
+    .footer .logo {
+      height: 40px;
+    }
+
+    a.card {
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+  .header,
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 20px 10px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .contact button {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .social-icons {
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav a, .dropbtn {
+    font-size: 0.95em;
+  }
+
+  .hero {
+    height: 200px;
+  }
+
+  .hero h1 {
+    font-size: 20px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .footer p {
+    font-size: 12px;
+  }
+
+  .card img {
+    height: 100px;
+  }
+}
+.nav {
+  display: flex;
+  flex-direction: row; /* Always horizontal */
+  flex-wrap: wrap;     /* Allow wrapping if space is tight */
+  justify-content: center;
+  gap: 16px;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <img src="logo.png" alt="Logo" />
+  </div>
+
+  <div class="hero">
+    <nav class="nav">
+      <a href="#" id="homeLink">Home</a>
+<script>
+  document.getElementById("homeLink").addEventListener("click", function (e) {
+    e.preventDefault();
+    window.location.href = "prset.html";
+  });
+</script>
+      <a href="#" id="golfLink">Golf Courses</a>
+      <script>
+        document.getElementById("golfLink").addEventListener("click", function (e) {
+          e.preventDefault();
+          window.location.href = "courses.html";
+        });
+      </script>
+      <a href="#" id="packagesLink">Packages</a>
+      <script>
+        
+        document.getElementById("packagesLink").addEventListener("click", function (e) {
+          e.preventDefault();
+          window.location.href = "packages.html";
+        });
+      </script>
+      <a href="#" id="aboutLink">About</a>
+      <script>
+        
+document.getElementById("aboutLink").addEventListener("click", function (e) {
+  e.preventDefault();
+  window.location.href = "about.html";
+});
+      </script>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Club Houses</a>
+        <div class="dropdown-content">
+          <a href="proshop.html">Proshop</a>
+          <a href="restaurant.html">Restaurant</a>
+        </div>
+      </div>
+    </nav>
+    <h1>Restaurant</h1>
+    <p>Enjoy a variety of dining options</p>
+    
+
+  </div>
+
+  <div class="section">
+    <h2>About the Restaurant</h2>
+    <p>
+      Our selection of dining options from a barbecue under sunset
+      to fine-dining experiences. Our commitment to high-quality ingredients
+      and an exceptional culinary offering.
+    </p>
+
+   <div class="dining-options">
+  <h2>Our Dining Options</h2>
+  <div class="cards">
+    <a class="card" href="th3.html">  <img src="fine.png" alt="Fine Dining" />
+      <div class="card-button">Fine Dining</div>
+    </a>
+    <a class="card" href="th3.html">  <img src="bbq.png" alt="Barbecue" />
+      <div class="card-button">Barbecue</div>
+    </a>
+    <a class="card" href="th3.html">  <img src="coffe.png" alt="Cafe" />
+      <div class="card-button">Cafe</div>
+    </a>
+  </div>
+</div>
+    <div class="contact">
+      <p>For more information or to make a reservation, please get in touch with us.</p>
+      <a href="contact.html">
+        <button>Contact Us</button>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <img class="logo" src="logo.png" alt="Logo" />
+    <p>HOLE IN ONE | Est. 2023 |<br> Email: contact@holeinonegolf.af</p>
+   <div class="social-icons">
+  <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+  <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+</div>
+
+  </div>
+  <script>
+    document.getElementById("contactBtn").addEventListener("click", function () {
+      
+      window.location.href = "contact.html";
+    });
+  </script>
+  
+</body>
+</html>

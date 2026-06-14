@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Other Facilities</title>
+  <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: white;
+      color: #333;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .navbar, .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.4);
+      font-family: 'Mountains of Christmas';
+      
+    }
+    .nav a, .dropbtn {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      font-size: 1.1em;
+    }
+    .nav a:hover {
+      color: #d3ffd3;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #444;
+      min-width: 150px;
+      border-radius: 6px;
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: white;
+      padding: 10px 14px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #666;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    header {
+      background-color: #b6d0aa;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+    }
+    header img {
+      height: 35px;
+    }
+    .hero {
+      background: url('act.png') center/cover no-repeat;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: 'Mountains of Christmas', cursive;
+      font-size: 36px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 10px 25px;
+      border-radius: 10px;
+    }
+    .content {
+      padding: 20px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .highlight {
+      color: green;
+      font-weight: bold;
+    }
+    .button-container {
+      display: flex;
+      gap: 12px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    .figma-button {
+      background-color: #2a5c2a;
+      color: white;
+      padding: 10px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .figma-button:hover {
+      background-color: #1e421e;
+    }
+    .facility-split {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .facility-split div {
+      width: 48%;
+      margin-bottom: 10px;
+    }
+    .tech-icons {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .tech-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 120px;
+      padding: 16px;
+      border-radius: 12px;
+      background-color: white;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .tech-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(42, 92, 42, 0.2);
+      background-color: #f6fff6;
+    }
+    .tech-item img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 10px;
+    }
+    .tech-item p {
+      color: #2a5c2a;
+      font-weight: 500;
+      font-size: 14px;
+      margin: 0;
+    }
+    .caddie {
+      margin-top: 30px;
+    }
+    .caddie p {
+      font-size: 14px;
+    }
+    footer {
+      background-color: #c3e6cb;
+      padding: 15px 20px;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .footer-logo img {
+      height: 30px;
+    }
+    .footer-center {
+      text-align: center;
+      flex-grow: 1;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .social-icons a {
+      background-color: white;
+      color: #107c10;
+      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .social-icons a:hover {
+      background-color: #f0e68c;
+      transform: scale(1.1);
+      color: #333;
+    }
+   /* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .nav a,
+  .nav .dropdown {
+    display: inline-block;
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+
+  .dropdown-content {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    background-color: #444;
+    border: 1px solid #ccc;
+    top: 100%;
+    left: 0;
+    width: max-content;
+    z-index: 1000;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: flex;
+  }
+
+  .package {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .package img {
+    margin-bottom: 10px;
+  }
+
+  .package-content {
+    font-size: 1rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+.digital-tech-description div {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center; 
+      }
+
+      .digital-tech-description img {
+        width: 48px; 
+        height: 48px; 
+        margin-right: 10px;
+      }
+    </style>
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo">
+  </header>
+
+  <div class="hero">
+    <h1>Other facilities</h1>
+    <nav class="nav">
+      <a href="prset.html">Home</a>
+      <a href="courses.html">Golf Courses</a>
+      <a href="packages.html">Packages</a>
+      <a href="about.html">About</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Club Houses</a>
+        <div class="dropdown-content">
+          <a href="proshop.html">Proshop</a>
+          <a href="restaurant.html">Restaurant</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="content">
+    <p class="highlight">Perfect Your Swing -</p>
+    <p>Step up at Hole1 Enjoy a professional-grade practice under our high-powered floodlights,<br>complemented with digital swing analysis.</p>
+
+     <div class="button-container">
+  <button class="figma-button" onclick="window.location.href='join.html'">BOOK A SESSION</button>
+</div>
+     
+    </div>
+
+    <h3>About the Driving Range</h3>
+    <div class="facility-split">
+      <div>
+        <ul>
+          <li>20 days with full floodlighting</li>
+          <li>Target greens with distance markers</li>
+          <li>Eco-friendly golf balls</li>
+        </ul>
+      </div>
+      <div>
+        <p>Open daily from 7 A.M - 11 PM<br>Chilled seating with refreshments<br>Located next to the main clubhouse</p>
+      </div>
+    </div>
+
+    <div class="digital-tech-description">
+      <h3>Digital Coaching Technology</h3>
+      <p>Our driving range is enhanced by cutting-edge digital coaching technology to help you improve your game:</p>
+      <div>
+        <img src="robot.png" alt="AI Coaching">
+        <p>AI powered coaching</p>
+      </div>
+      <div>
+        <img src="camera.png" alt="Video Conferencing">
+        <p>Video Conferencing</p>
+      </div>
+      <div>
+        <img src="man.png" alt="Hybrid Sessions">
+        <p>Hybrid Sessions</p>
+      </div>
+    </div>
+
+    <div class="caddie">
+      <h3>Caddie service.</h3>
+      <p>
+        Enhance Your Golf Experience<br>
+        There is no better way to experience your round of golf at Hole in One than taking a trained forecaddie. Hole in One has partnered with CADDIEMASTER to enhance the overall golf experience with offering forecaddies.<br><br>
+        Aside from having extensive course knowledge to help you navigate around the Lisbon desert golf experience, our forecaddies will assist in locating balls in the desert, raking bunkers, cleaning your clubs and just creating a much more memorable experience.
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="logo.png" alt="Footer Logo">
+    </div>
+    <div class="footer-center">
+      <p><span class="green">Hole in One Golf Club</span></p>
+      <p><span class="green">E-mail:</span> contact@holeinonegolf.pt</p>
+    </div>
+   <div class="social-icons">
+  <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+  <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+</div>
+
+  </footer>
+</body>
+</html>

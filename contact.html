@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Hole In One</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Mountains of Christmas', cursive;
+      background-color: white;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .top-bar {
+      background-color: #90D59C;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      flex-wrap: wrap;
+    }
+
+    .top-bar img {
+      height: 45px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      align-items: center;
+      font-family: 'Mountains of Christmas', cursive;
+    }
+
+    .nav a, .dropbtn {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      font-size: 1rem;
+    }
+
+    .nav a:hover {
+      color: #d3ffd3;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #444;
+      min-width: 150px;
+      border-radius: 6px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 10px 14px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #666;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .contact-page {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .contact-header {
+      background: url('stick.png') no-repeat center;
+      background-size: cover;
+      height: 180px;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+    }
+
+    .contact-header h1 {
+      font-size: 32px;
+      color: white;
+      margin: 0;
+    }
+
+    .contact-content {
+      padding: 30px 24px;
+      color: #000;
+    }
+
+    .contact-content h2 {
+      color: #5cb85c;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .contact-content p {
+      margin: 6px 0 18px;
+      font-size: 16px;
+    }
+
+    .bold {
+      font-weight: bold;
+      font-size: 17px;
+      color: black;
+    }
+
+    .email-link {
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .email-link:hover {
+      color: #4CAF50;
+      text-decoration: underline;
+    }
+
+    .footer {
+      background-color: rgba(0, 128, 0, 0.46);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      color: white;
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+
+    .footer .logo {
+      height: 36px;
+    }
+
+    .footer .text {
+      flex-grow: 1;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      background-color: white;
+      color: #107c10;
+      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .social-icons a:hover {
+      background-color: #f0e68c;
+      transform: scale(1.1);
+      color: #333;
+    }
+
+    @media screen and (max-width: 600px) {
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px;
+      }
+
+      .contact-header {
+        height: 140px;
+        padding: 10px;
+      }
+
+      .contact-header h1 {
+        font-size: 24px;
+      }
+
+      .contact-content {
+        padding: 20px 16px;
+      }
+
+      .contact-content h2 {
+        font-size: 18px;
+      }
+
+      .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+      }
+
+      .footer .text,
+      .footer .logo,
+      .social-icons {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <img src="logo.png" alt="Hole In One Logo" />
+    <nav class="nav">
+      <a href="prset.html">Home</a>
+      <a href="courses.html">Golf Courses</a>
+      <a href="packages.html">Packages</a>
+      <a href="about.html">About</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Club Houses</a>
+        <div class="dropdown-content">
+          <a href="proshop.html">Proshop</a>
+          <a href="restaurant.html">Restaurant</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="contact-page">
+    <div class="contact-header">
+      <h1>Contact</h1>
+    </div>
+    <div class="contact-content">
+      <h2>Email us:</h2>
+      <p class="bold">General Inquiries:</p>
+      <p><a href="mailto:contact@holeinone.pt" class="email-link">contact@holeinone.pt</a></p>
+
+      <p class="bold">Events:</p>
+      <p><a href="mailto:events@holeinone.pt" class="email-link">events@holeinone.pt</a></p>
+
+      <h2>Find us:</h2>
+      <p>R. do Arco<br/>80-2 Esq</p>
+
+      <h2>Call Us:</h2>
+      <p style="color: black; font-weight: lighter;">+351 21 343 2148</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <img src="logo.png" alt="Logo" class="logo" />
+    <div class="text">
+      HOLE IN ONE<br/>
+      R. do Arco, 80-2 Esq<br/>
+      Email: contact@holeinonegolf.pt
+    </div>
+   <div class="social-icons">
+  <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+  <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+</div>
+  </div>
+</body>
+</html>

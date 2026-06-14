@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hole In One | Packages</title>
+  <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    body {
+      font-family: 'Mountains of Christmas', cursive;
+      background-color: white;
+      color: #228B22;
+      line-height: 1.5;
+    }
+  
+    .header {
+      background-color: #90C695;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  
+    .header img {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .title {
+      font-size: 1.4em;
+      color: #228B22;
+    }
+  
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      font-family: 'Mountains of Christmas', cursive;
+    }
+  
+    .nav a, .dropbtn {
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      padding: 8px 12px;
+      transition: color 0.3s ease;
+    }
+  
+    .nav a:hover, .dropdown-content a:hover {
+      color: #444;
+    }
+  
+    .dropdown {
+      position: relative;
+    }
+  
+   .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  background-color: #444;
+  border: 1px solid #ccc;
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  padding: 10px 14px;
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.dropdown-content a:hover {
+      background-color: #666;
+    }
+
+  
+    .section {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+  
+    .package {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      background-color: #f4fdf4;
+      border-radius: 12px;
+      padding: 15px;
+    }
+  
+    .package img {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      flex-shrink: 0;
+      border-radius: 8px;
+    }
+  
+    .package-content {
+      flex: 1;
+      font-size: 1.1rem;
+    }
+  
+    .package h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+  
+    .package ul {
+      padding-left: 20px;
+    }
+  
+    .book-now {
+      background-color: #90C695;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+      margin-top: 10px;
+      font-family: 'Mountains of Christmas';
+    }
+  
+    .book-now:hover {
+      background-color: #77a67e;
+      transform: scale(1.05);
+    }
+  
+   .footer {
+  background-color: #90C695;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-size: 0.9em;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  width: 50px;
+  height: 50px;
+}
+
+.footer-center {
+  flex: 1;
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  background-color: white;
+  color: #107c10;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.social-icons a:hover {
+  background-color: #f0e68c;
+  transform: scale(1.1);
+  color: #333;
+}
+
+  /* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .nav a,
+  .nav .dropdown {
+    display: inline-block;
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+
+  .dropdown-content {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    background-color: #444;
+    border: 1px solid #ccc;
+    top: 100%;
+    left: 0;
+    width: max-content;
+    z-index: 1000;
+  }
+  
+
+  .dropdown:hover .dropdown-content {
+    display: flex;
+  }
+
+  .package {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .package img {
+    margin-bottom: 10px;
+  }
+
+  .package-content {
+    font-size: 1rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+  </style>
+  
+</head>
+<body>
+  <header>
+ 
+  </header>
+  <div class="header">
+    
+    <img src="logo.png" alt="Hole In One Logo">
+    <div class="title">Packages</div>
+    <nav class="nav">
+      <a href="#" id="homeLink">Home</a>
+<script>
+  document.getElementById("homeLink").addEventListener("click", function (e) {
+    e.preventDefault();
+    window.location.href = "prset.html";
+  });
+</script>
+      <a href="#" id="golfLink">Golf Courses</a>
+      <script>
+        document.getElementById("golfLink").addEventListener("click", function (e) {
+          e.preventDefault();
+          window.location.href = "courses.html";
+        });
+      </script>
+      <a href="#" id="packagesLink">Packages</a>
+      <script>
+        
+        document.getElementById("packagesLink").addEventListener("click", function (e) {
+          e.preventDefault();
+          window.location.href = "packages.html";
+        });
+      </script>
+      <a href="#" id="aboutLink">About</a>
+      <script>
+        
+document.getElementById("aboutLink").addEventListener("click", function (e) {
+  e.preventDefault();
+  window.location.href = "about.html";
+});
+      </script>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Club Houses</a>
+        <div class="dropdown-content">
+          <a href="proshop.html">Proshop</a>
+          <a href="restaurant.html">Restaurant</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="section">
+    <div class="package">
+      <img src="sea.png" alt="Five Rounds">
+      <button class="book-now" onclick="window.location.href='join.html'">Book now</button>
+
+      <div class="package-content">
+        <h3>Five Rounds</h3>
+        <ul>
+          <li>Five night full board stay in a luxury suite</li>
+          <li>Five 18-hole rounds</li>
+          <li>One guaranteed round on the Sea View course</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="package">
+      <img src="brk.png" alt="Triple Tee">
+      <button class="book-now" onclick="window.location.href='join.html'">Book now</button>
+
+
+      <div class="package-content">
+        <h3>Triple Tee</h3>
+        <ul>
+          <li>Two night stay in a double room with breakfast</li>
+          <li>Three 18-hole rounds including one on the Sea View Course (if available)</li>
+          <li>Complimentary buggy hire</li>
+          <li>20% discount for the pro shop</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="package">
+      <img src="rece.png" alt="Getaway Break">
+      <button class="book-now" onclick="window.location.href='join.html'">Book now</button>
+
+      <script>
+        document.getElementById("contactBtn").addEventListener("click", function () {
+          
+          window.location.href = "contact.html";
+        });
+      </script>
+      <div class="package-content">
+        
+        <h3>Getaway Break</h3>
+        <ul>
+          <li>Overnight stay with full breakfast</li>
+          <li>Dinner in any of the resort’s restaurants</li>
+          <li>Access to courses (charges apply and excludes Sea View Course)</li>
+          <li>Complimentary club hire</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Custom packages are available for corporate events and longer stays. Clients must contact the company to arrange any custom packages.</p>
+  </div>
+
+ <div class="footer">
+  <img class="footer-logo" src="logo.png" alt="Hole In One Logo">
+
+  <div class="footer-center">
+    <strong>HOLE IN ONE</strong><br>
+    R. de Aroa, 802-21<br>
+    Email: contact@holeinonegolf.ac
+  </div>
+
+  <div class="social-icons">
+    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+  </div>
+</div>
+
+
+  <script>
+    // Select all elements with the class 'book-now'
+    const bookButtons = document.querySelectorAll('.book-now');
+  
+    // Add click event to each
+    bookButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        window.location.href = 'join.html';
+      });
+    });
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const dropdownBtn = document.querySelector('.dropbtn');
+    const dropdownContent = document.querySelector('.dropdown-content');
+
+    dropdownBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      dropdownContent.style.display = dropdownContent.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Optional: Hide dropdown when clicking outside
+    document.addEventListener('click', function (e) {
+      if (!dropdownBtn.contains(e.target) && !dropdownContent.contains(e.target)) {
+        dropdownContent.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proshop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Mountains of Christmas', cursive;
+      background-color: #fff;
+      color: #365b3f;
+    }
+
+    .hero {
+      background-image: url('rich.png');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 40px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    .nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+      font-family: 'Mountains of Christmas', cursive;
+      flex-wrap: wrap;
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+    }
+
+    .nav a, .dropbtn {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      font-size: 1.1em;
+      transition: color 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: #d3ffd3;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #444;
+      min-width: 150px;
+      border-radius: 6px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 10px 14px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #666;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 40px;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .intro {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .intro h2 {
+      color: #3aaf5b;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .shop-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .go-button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .go-button {
+      display: inline-block;
+      background-color: #3aaf5b;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .go-button:hover {
+      background-color: #2d934c;
+      transform: scale(1.05);
+    }
+
+    .upper-footer {
+      background-color: #3aaf5b;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    footer {
+      background-color: #c3e6cb;
+      color: #2b4c30;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .footer-logo {
+      width: 40px;
+      margin-bottom: 10px;
+    }
+
+    .footer-center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      background-color: white;
+      color: #107c10;
+      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .social-icons a:hover {
+      background-color: #f0e68c;
+      transform: scale(1.1);
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .footer-center {
+        order: 2;
+      }
+
+      .footer-logo,
+      .social-icons {
+        order: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <img src="logo.png" class="logo" alt="Logo" />
+    <h1>Proshop</h1>
+    <nav class="nav">
+      <a href="#" id="homeLink">Home</a>
+      <a href="#" id="golfLink">Golf Courses</a>
+      <a href="#" id="packagesLink">Packages</a>
+      <a href="#" id="aboutLink">About</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Club Houses</a>
+        <div class="dropdown-content">
+          <a href="proshop.html">Proshop</a>
+          <a href="restaurant.html">Restaurant</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="content">
+    <div class="intro">
+      <h2>Quick Stop at the Proshop…</h2>
+      <p>The Whole Proshop team welcomes you every day from 6:00 am to 6:00 pm.</p>
+      <p>The first golf proshop of Portugal offers you a large and diverse range of Callaway, McLaren, Rhode Island, Ernie Els, and many other luxurious brands.</p>
+      <p>Whether you are searching for clothing, caps, shoes, or gifts, our reception team will be more than happy to help you with your choice.</p>
+    <div class="go-button-container">
+  <a href="psss2.html" class="go-button">Go There</a>
+</div>
+    </div>
+    
+    <div class="shop-image">
+      <img src="sport.png" alt="Proshop clothing">
+    </div>
+  </main>
+
+ 
+
+  <footer>
+    <img class="footer-logo" src="logo.png" alt="Logo" />
+    <div class="footer-center">
+      <strong>HOLE IN ONE</strong><br>
+      R. dos Açores, 800-2 Luz<br>
+      <a href="mailto:contact@holeinonegolf.pt" style="color: #2b4c30; text-decoration: none;">contact@holeinonegolf.pt</a>
+    </div>
+   <div class="social-icons">
+  <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+  <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+</div>
+
+  </footer>
+
+  <!-- Navigation scripts -->
+  <script>
+    document.getElementById("homeLink").addEventListener("click", function (e) {
+      e.preventDefault();
+      window.location.href = "prset.html";
+    });
+    document.getElementById("golfLink").addEventListener("click", function (e) {
+      e.preventDefault();
+      window.location.href = "courses.html";
+    });
+    document.getElementById("packagesLink").addEventListener("click", function (e) {
+      e.preventDefault();
+      window.location.href = "packages.html";
+    });
+    document.getElementById("aboutLink").addEventListener("click", function (e) {
+      e.preventDefault();
+      window.location.href = "about.html";
+    });
+  </script>
+
+</body>
+</html>
